@@ -96,21 +96,28 @@ int main()
         for (int j = 0; j < enrollVector.size(); j++)
         {
             // if the user id's AND the insurances match AND they are not the same object, then erase the one w/ the lower version
-            if ( (enrollVector[i].userid == enrollVector[j].userid) && (enrollVector[i].insurance == enrollVector[j].insurance) && (notSameEnrollee(enrollVector[i], enrollVector[j])) )
+            if ( (enrollVector[i].userid == enrollVector[j].userid) && (enrollVector[i].insurance == enrollVector[j].insurance)
+                    && (notSameEnrollee(enrollVector[i], enrollVector[j])) )
             {
                 // if i < j, then delete i
                 if (enrollVector[i].version < enrollVector[j].version)
                 {
-                    // print out a message stating which enrollees were received from the input file, but deleted due to a duplicate userid/insurance
-                    outputFile << enrollVector[i].userid << "," << enrollVector[i].fname << "," << enrollVector[i].lname << "," << enrollVector[i].insurance << "," << enrollVector[i].version << endl;
+                    // print out a message stating which enrollees were received
+                    // from the input file, but deleted due to a duplicate userid/insurance
+                    outputFile << enrollVector[i].userid << "," << enrollVector[i].fname << ","
+                                << enrollVector[i].lname << "," << enrollVector[i].insurance << ","
+                                << enrollVector[i].version << endl;
                     enrollVector.erase(enrollVector.begin()+i);
                     numDuplicates++;
                 }
                 // otherwise delete j
                 else
                 {
-                    // print out a message stating which enrollees were received from the input file, but deleted due to a duplicate userid/insurance
-                    outputFile << enrollVector[j].userid << "," << enrollVector[j].fname << "," << enrollVector[j].lname << "," << enrollVector[j].insurance << "," << enrollVector[j].version << endl;
+                    // print out a message stating which enrollees were received
+                    // from the input file, but deleted due to a duplicate userid/insurance
+                    outputFile << enrollVector[j].userid << "," << enrollVector[j].fname << ","
+                                << enrollVector[j].lname << "," << enrollVector[j].insurance << ","
+                                << enrollVector[j].version << endl;
                     enrollVector.erase(enrollVector.begin()+j);
                     numDuplicates++;
                 }
