@@ -1,6 +1,5 @@
-// INSTRUCTIONS:
-// Write a program which takes in a string as an input and
-// returns true if all the parentheses in the string are properly closed and nested.
+
+//<!*---------- MUST BE RUN WITH C++ 11 COMPILER ----------*!>
 
 #include <iostream>
 #include <string>
